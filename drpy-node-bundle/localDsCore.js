@@ -88,7 +88,7 @@ async function getEngine(moduleName, query, inject_env) {
             hostname = "127.0.0.1:9978",
             hostUrl = "127.0.0.1",
             proxyUrl = `http://127.0.0.1:9978/proxy?do=node&siteKey=${moduleName}`,
-            httpUrl, imageApi, mediaProxyUrl, webdavProxyUrl, ftpProxyUrl,
+            proxyPath, httpUrl, imageApi, mediaProxyUrl, webdavProxyUrl, ftpProxyUrl,
             wsName, fServer,
         } = inject_env;
         const getProxyUrl = function () {
@@ -109,6 +109,7 @@ async function getEngine(moduleName, query, inject_env) {
             requestHost,
             hostname,
             proxyUrl,
+            proxyPath, // 代理路径
             getProxyUrl,
             ext: moduleExt,
             moduleName: moduleName,
